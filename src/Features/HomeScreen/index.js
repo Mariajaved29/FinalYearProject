@@ -121,7 +121,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
     },
     header: {
         flex: 1,
-        height: 340
+        height: 335
     },
     footer: {
         flex: 3,
@@ -166,7 +166,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
       marginTop: 5, 
       marginBottom: 5,
       marginLeft: 50,
-      fontWeight: 'bold'
+      // fontWeight: 'bold'
      },
     paragraph: {
       fontSize: 17,
