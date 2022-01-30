@@ -7,7 +7,7 @@ import CustomDrawer from '../Components/CustomDrawer';
 
 import ProfileScreen from '../Features/ProfileScreen';
 import MessagesScreen from '../Features/MessagesScreen';
-import Contact from '../Features/Contact';
+import Contact from '../Features/Contact/Contact';
 import EditProfile from '../Features/ProfileScreen/EditProfile';
 import CoursesDetailsScreen from '../Features/CoursesDetailsScreen';
 import BooksDetailsScreen from '../Features/BooksDetailsScreen';
