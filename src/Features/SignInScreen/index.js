@@ -3,14 +3,11 @@ import { StyleSheet,
     Text, 
     View, 
     TouchableOpacity, 
-    Dimensions,
     Platform,
     TextInput,
     StatusBar,
-    ScrollView
     }
-   from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';   
+   from 'react-native'; 
 import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
@@ -109,10 +106,6 @@ const SignInScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
             <StatusBar backgroundColor='#729875' barStyle='light-content' />
-            <Ionicons.Button name='arrow-back' size={27}  backgroundColor='#fff' color='#729875'
-             onPress={() => navigation.navigate('WelcomeScreen')}>
-                 <Text>Go Back</Text>
-            </Ionicons.Button>
             <View style={styles.header}>
             </View>
             <Animatable.View

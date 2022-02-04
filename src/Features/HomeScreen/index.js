@@ -9,110 +9,82 @@ import React from 'react';
      Platform,
      StatusBar
      } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';   
+import Feather from 'react-native-vector-icons/Feather';
 
-  const HomeScreen = ({navigation}) => {
-
-    return (
-      <ScrollView>
-        <View style={styles.container}>
-            <StatusBar backgroundColor='#729875' barStyle='light-content' />
-            <View style={styles.header}>
-            <Ionicons.Button name='ios-menu' size={27}  backgroundColor='#c1e3ca' color='#729875'
-             onPress={() => navigation.openDrawer()}>
-            <Text style={styles.heading}>مدرسہ عربیہ صفہ للبنات</Text>
-            </Ionicons.Button>
-            <Image source={require('../../assets/masjid.png')} style={{height: 300}}></Image>
-            </View>
-            <View style={styles.footer}>
-            {/* <Text style={styles.heading}>مدرسہ عربیہ صفہ للبنات</Text> */}
-            {/* Main Box start */}
-              <View style={styles.mainBox}>
+const HomeScreen = ({navigation}) => {
+  return (
+    <ScrollView>
+      <View style={styles.container}>
+      <StatusBar backgroundColor='#729875' barStyle='light-content' />
+        <View style={styles.header}>
+          <Ionicons.Button 
+            name='ios-menu' 
+            size={27}  
+            backgroundColor='#c1e3ca' 
+            color='#729875'
+            onPress={() => navigation.openDrawer()}>
+              <Text style={styles.heading}>مدرسہ عربیہ صفہ للبنات</Text>
+              <Feather.Button
+                name="bell" 
+                size={27}  
+                backgroundColor='#c1e3ca' 
+                color='#729875'
+                style={styles.headerIcon}
+                options={{
+                  tabBarBadge: 3,
+                  tabBarBadgeStyle: {backgroundColor: '#729875'},
+                }}
+                  // onPress={() => navigation.navigate('Notification')}
+              />
+          </Ionicons.Button>
+          <Image source={require('../../assets/masjid.png')} style={{height: 300}}></Image>
+        </View>
+            
+        <View style={styles.footer}>
+        {/* <Text style={styles.heading}>مدرسہ عربیہ صفہ للبنات</Text> */}
+        {/* Main Box start */}
+        <View style={styles.mainBox}>
+          <View style={styles.iconBox}> 
+           <View style={styles.icon}>
+              <TouchableOpacity onPress={() => navigation.navigate('Books')}>
+                <MaterialCommunityIcons name= 'book-multiple' color= '#729875' size= {40} />
+                  </TouchableOpacity>
+                </View>
+                <Text style={styles.mainBox_text}>Books</Text>
+              </View>
+              <View style={styles.iconBox}> 
+              <View style={styles.icon}>
+                <TouchableOpacity onPress={() => navigation.navigate('TimeTable')}>
+                  <MaterialCommunityIcons name= 'timetable' color= '#729875' size= {40} />
+                </TouchableOpacity>
+              </View>
+                <Text style={styles.mainBox_text}>TimeTable</Text>
+              </View>
               <View style={styles.iconBox}> 
                 <View style={styles.icon}>
-                  <TouchableOpacity
-                  onPress={() => navigation.navigate('Messages')}>
-              <Ionicons 
-              name= 'newspaper' color= '#729875' size= {40} />
-              </TouchableOpacity>
-              </View>
-              <Text style={styles.mainBox_text}>News</Text>
-              </View>
-
-              <View style={styles.iconBox}> 
-                <View style={styles.icon}>
-                <TouchableOpacity
-                  onPress={() => navigation.navigate('Courses')}>
-              <Ionicons 
-              name= 'book' color= '#729875' size= {40} />
-              </TouchableOpacity>
-              </View>
-              <Text style={styles.mainBox_text}>Courses</Text>
-              </View>
-
-              <View style={styles.iconBox}> 
-                <View style={styles.icon}>
-                <TouchableOpacity
-                  onPress={() => navigation.navigate('Books')}>
-              <MaterialCommunityIcons 
-              name= 'book-multiple' color= '#729875' size= {40} />
-              </TouchableOpacity>
-              </View>
-              <Text style={styles.mainBox_text}>Books</Text>
-              </View>
-
-              <View style={styles.iconBox}> 
-                <View style={styles.icon}>
-                <TouchableOpacity
-                  onPress={() => navigation.navigate('Time Table')}>
-              <MaterialCommunityIcons 
-              name= 'timetable' color= '#729875' size= {40} />
-              </TouchableOpacity>
-              </View>
-              <Text style={styles.mainBox_text}>TimeTable</Text>
-              </View>
-
-              <View style={styles.iconBox}> 
-                <View style={styles.icon}>
-                <TouchableOpacity
-                  onPress={() => navigation.navigate('Profile')}>
-              <MaterialCommunityIcons 
-              name= 'account-details' color= '#729875' size= {40} />
-              </TouchableOpacity>
-              </View>
-              <Text style={styles.mainBox_text}>Profile</Text>
-              </View>
-
-              <View style={styles.iconBox}> 
-                <View style={styles.icon}>
-                <TouchableOpacity
-                  onPress={() => navigation.navigate('Contact')}>
-              <MaterialCommunityIcons 
-              name= 'contacts' color= '#729875' size= {40} />
-              </TouchableOpacity>
-              </View>
-              <Text style={styles.mainBox_text}>Contact</Text>
-              </View>  
-             </View>
-              <View>
+                  <TouchableOpacity onPress={() => navigation.navigate('MessagesScreen')}>
+                    <MaterialCommunityIcons name= 'chat-processing' color= '#729875' size= {40} />
+                  </TouchableOpacity>
+                </View>
+                <Text style={styles.mainBox_text}>News</Text>
+              </View> 
+            </View>            
+            <View>
             {/* Main Box End */}
             <Text style={styles.paragraph}>
-            دینی مدارس کی تاریخ اتنی ہی قدیم ہے جتنی کہ اسلام کی۔  دینی مدارس عہد نبوی سے لے کر آج تک اپنے ایک مخصوص انداز سے  چلے آ رہے ہیں۔ حضورؐ کے دور میں پہلا دینی مدرسہ وہ مخصوص چبو ترہ جس کو "صُفّہ "کہا جا تا ہے۔ اور اس میں حضور ؐ سے تعلیم کتاب تعلیم حکمت اور تز کیہ نفس حاصل کرنے والے حضرت ابو ہریرہؓ ، حضرت انس ؓ سمیت 70کے قریب صحابہ کرام ؓ "اصحابِ صُفّہ "اور سب سے پہلے دینی طا لب علم کہلاتے ہیں۔ دینی مدارس کا اپنا ایک مخصوص نصاب ہوتا ہے جو انتہائی پاکیزہ اور نورانی ماحول میں پڑھا یا جا تا ہے۔ جس میں مستند عالم دین کا مقام حاصل کرنے کے لئے عربی وفارسی ، صرف ونحو، قرآن و حدیث ، تفسیر ، فقہ و اصول فقہ، معانی و ادب ، منطق و فلسفہ جیسے ضروری علوم کا ایک مکمل نصا ب پڑھنے کے بعد وہ عالم دین کے منصب پر فائز ہوتا ہے۔ الحمد لله ثم الحمد لله انہیں مدارس کی ایک کڑی مدرسہ عربیہ صفہ للبنات بھی ھے
-              </Text>
-              <Text style={[styles.text_footer, {textAlign: 'center', marginTop: 10, fontWeight: 'bold'}]}>
+              دینی مدارس کی تاریخ اتنی ہی قدیم ہے جتنی کہ اسلام کی۔  دینی مدارس عہد نبوی سے لے کر آج تک اپنے ایک مخصوص انداز سے  چلے آ رہے ہیں۔ حضورؐ کے دور میں پہلا دینی مدرسہ وہ مخصوص چبو ترہ جس کو "صُفّہ "کہا جا تا ہے۔ اور اس میں حضور ؐ سے تعلیم کتاب تعلیم حکمت اور تز کیہ نفس حاصل کرنے والے حضرت ابو ہریرہؓ ، حضرت انس ؓ سمیت 70کے قریب صحابہ کرام ؓ "اصحابِ صُفّہ "اور سب سے پہلے دینی طا لب علم کہلاتے ہیں۔ دینی مدارس کا اپنا ایک مخصوص نصاب ہوتا ہے جو انتہائی پاکیزہ اور نورانی ماحول میں پڑھا یا جا تا ہے۔ جس میں مستند عالم دین کا مقام حاصل کرنے کے لئے عربی وفارسی ، صرف ونحو، قرآن و حدیث ، تفسیر ، فقہ و اصول فقہ، معانی و ادب ، منطق و فلسفہ جیسے ضروری علوم کا ایک مکمل نصا ب پڑھنے کے بعد وہ عالم دین کے منصب پر فائز ہوتا ہے۔ الحمد لله ثم الحمد لله انہیں مدارس کی ایک کڑی مدرسہ عربیہ صفہ للبنات بھی ھے
+            </Text>
+            <Text style={[styles.text_footer, {textAlign: 'center', marginTop: 10, fontWeight: 'bold'}]}>
               ربنا تقبل منا انک انت السمیع العلیم
-              </Text>
-          
+            </Text>            
           </View>
-            
-            </View>
-          
+        </View>
       </View>
-      </ScrollView>
-    );
-  };
+    </ScrollView>
+  );
+};
 
   const styles = StyleSheet.create({
     container: {
@@ -166,6 +138,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
       marginTop: 5, 
       marginBottom: 5,
       marginLeft: 50,
+      marginRight:30
       // fontWeight: 'bold'
      },
     paragraph: {

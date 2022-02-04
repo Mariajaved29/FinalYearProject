@@ -5,6 +5,7 @@ import {AuthContext} from '../Navigation/AuthProvider';
 
 import RootStack from '../Navigation/RootStack';
 import AppStack from '../Navigation/AppStack';
+import HomeStack from '../Navigation/HomeStack';
 
 const Routes = () => {
   const {user, setUser} = useContext(AuthContext);
@@ -24,7 +25,7 @@ const Routes = () => {
 
   return (
     <NavigationContainer>
-      {user ? <AppStack /> : <RootStack />}
+      {user ? <AppStack /> : <RootStack /> }
     </NavigationContainer>
   );
 };

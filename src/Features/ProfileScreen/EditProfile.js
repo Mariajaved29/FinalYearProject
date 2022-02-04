@@ -11,24 +11,11 @@ import {
    } from "react-native";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
-import Feather from 'react-native-vector-icons/Feather'
 import Animated from 'react-native-reanimated';
 import BottomSheet from 'reanimated-bottom-sheet';
 import ImagePicker from 'react-native-image-crop-picker';
 
 const EditProfile = ({navigation}) => {
-
-// This is for passing values Editprofile to ProfileScreen
-
-    // const [firstname, setFirstname] = useState('Sobia');
-    // const [lastname, setLastname] = useState('');
-    // const [location, setLocation] = useState('');
-    // const [email, setEmail] = useState('');
-    // const [phone, setPhone] = useState('');
-    // const [dateofbirth, setDateofbirth] = useState('');
-    // const [course, setCourse] = useState('');
-    // const [about, setAbout] = useState('');
-// End
 
 // profile picture editor field
   const [image, setImage] = useState('https://cdn2.iconfinder.com/data/icons/people-round-icons/130/arab-512.png')

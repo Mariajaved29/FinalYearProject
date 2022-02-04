@@ -32,13 +32,6 @@ const WelcomeScreen = ({navigation}) => {
                 <Text style={styles.title}>Stay Connected With Us!</Text>
                 <Text style={styles.text}>Sign in With Account</Text>
                 {/* this code is for react native picker */}
-                <Picker
-                mode={'dropdown'}
-                selectedValue={selectedValue}
-                onValueChange={(itemValue) => setSelectedValue(itemValue)}>
-                    <Picker.Item label='Admin' value='Admin' />
-                    <Picker.Item label='Student' value='Student' />
-                </Picker>
                 <View style={styles.button}>
                     <TouchableOpacity 
                     onPress={() => navigation.navigate('SignInScreen')}
@@ -57,7 +50,6 @@ const WelcomeScreen = ({navigation}) => {
                     </TouchableOpacity>
                 </View>
             </Animatable.View>
-
         </View>
     )
 }

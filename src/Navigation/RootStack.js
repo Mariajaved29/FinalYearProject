@@ -6,7 +6,6 @@ import SplashScreen from '../Features/SplashScreen';
 import WelcomeScreen from '../Features/WelcomeScreen';
 import SignInScreen from '../Features/SignInScreen';
 import SignUpScreen from '../Features/SignUpScreen';
-// import HomeScreen from '../Features/HomeScreen';
 import AuthStack from './AppStack';
 
 
@@ -25,31 +24,11 @@ const Auth = () => {
           name="SignInScreen"
           component={SignInScreen}
           options={{headerShown: false}}
-        //   options={{
-        //     title: 'SignInScreen', //Set Header Title
-        //     headerStyle: {
-        //       backgroundColor: '#307ecc', //Set Header color
-        //     },
-        //     headerTintColor: '#fff', //Set Header text color
-        //     headerTitleStyle: {
-        //       fontWeight: 'bold', //Set Header text style
-        //     },
-        //   }}
         />
         <Root.Screen
           name="SignUpScreen"
           component={SignUpScreen}
           options={{headerShown: false}}
-        //   options={{
-        //     title: 'SignUpScreen', //Set Header Title
-        //     headerStyle: {
-        //       backgroundColor: '#307ecc', //Set Header color
-        //     },
-        //     headerTintColor: '#fff', //Set Header text color
-        //     headerTitleStyle: {
-        //       fontWeight: 'bold', //Set Header text style
-        //     },
-        //   }}
         />
       </Root.Navigator>
     );
